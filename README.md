@@ -1,6 +1,7 @@
 # AnimeApp
 
 This is a simple progressive web app for getting details of top animes and seeing further details of those animes individually, made using jikan.moe api.
+See live at: https://anime-app-1.herokuapp.com/
 
 ## Development server
 
