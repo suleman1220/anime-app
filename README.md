@@ -1,6 +1,6 @@
 # AnimeApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+This is a simple progressive web app for getting details of top animes and seeing further details of those animes individually, made using jikan.moe api.
 
 ## Development server
 
