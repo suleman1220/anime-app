@@ -1,0 +1,47 @@
+#head-sec {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#head-sec h1 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#body-sec {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.btn {
+  position: fixed;
+  top: 40px;
+  left: 30px;
+}
+
+.synopsis {
+  margin: 20px 30px auto 30px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+span {
+  font-weight: normal;
+}
+
+@media screen and (max-width: 539px) {
+  .btn {
+    display: none;
+  }
+
+  .synopsis {
+    margin: 15px auto auto auto;
+  }
+
+  .title {
+    margin-top: 40px;
+  }
+}

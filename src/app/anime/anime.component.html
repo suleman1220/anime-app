@@ -1,0 +1,78 @@
+<div *ngIf="animeData; then showAnime; else loader"></div>
+<ng-template #showAnime>
+  <div id="body">
+    <button mat-fab color="accent" (click)="goBack()" class="btn">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+    <div>
+      <div id="head-sec">
+        <mat-grid-list [cols]="breakpointHead" rowHeight="4:1" (window:resize)="onResize($event)">
+          <mat-grid-tile colspan="1" rowspan="2">
+            <img style="height: 100%" [src]="animeData.image_url" />
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1">
+            <h1 class="title">Title in English: <span>{{ animeData.title }}</span></h1>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1">
+            <h1>Title in Japanese: <span>{{ animeData.title_japanese }}</span></h1>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
+      <div id="body-sec">
+        <mat-grid-list [cols]="breakpointBody" rowHeight="60" (window:resize)="onResize($event)">
+          <mat-grid-tile>
+            <h3>Type: <span>{{ (animeData.type) ? animeData.type : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Source: <span>{{ (animeData.source) ? animeData.source : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Episodes: <span>{{ (animeData.episodes) ? animeData.episodes : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Status: <span>{{ (animeData.status) ? animeData.status : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Aired: <span>{{ (animeData.aired) ? animeData.aired.string : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Duration: <span>{{ (animeData.duration) ? animeData.duration : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Rating: <span>{{ (animeData.rating) ? animeData.rating : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Score: <span>{{ (animeData.score) ? animeData.score : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Rank: <span>{{ (animeData.rank) ? animeData.rank : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Members: <span>{{ (animeData.members) ? animeData.members : "No Data" }}</span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3>Genres: <span *ngFor="let genre of animeData.genres; index as i">{{ getGenre(i) }} </span></h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <button mat-stroked-button color="primary">
+              <a [href]="animeData.url" target="_blank" style="text-decoration: none; margin-right: 5px">
+                Open in MyAnimeList Website</a>
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+        <h3 class="synopsis">
+          Synopsis: <span>{{ (animeData.synopsis) ? animeData.synopsis : "No Data" }}</span>
+        </h3>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #loader>
+  <div style="width: 100%; display: flex; justify-content: center">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+</ng-template>

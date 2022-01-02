@@ -1,0 +1,50 @@
+<div *ngIf="topAiringAnimes.length > 0; then animes else loader">
+</div>
+<ng-template #animes>
+  <div>
+    <h1>Top Airing Animes</h1>
+    <div id="top-airing">
+      <mat-card *ngFor="let anime of topAiringAnimes" (click)="openAnime(anime.mal_id)">
+        <img mat-card-image [src]="anime.image_url" />
+        <mat-card-content>
+          <p>
+            {{ anime.title }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h1>Top Rated Animes</h1>
+    <div id="top-tv">
+      <mat-card *ngFor="let anime of topTvAnimes" (click)="openAnime(anime.mal_id)">
+        <img mat-card-image [src]="anime.image_url" />
+        <mat-card-content>
+          <p>
+            {{ anime.title }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h1>Top Upcoming Animes</h1>
+    <div id="top-upcoming">
+      <mat-card *ngFor="let anime of topUpcomingAnimes" (click)="openAnime(anime.mal_id)">
+        <img mat-card-image [src]="anime.image_url" />
+        <mat-card-content>
+          <p>
+            {{ anime.title }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</ng-template>
+<ng-template #loader>
+  <div style="width: 100%; display: flex; justify-content: center">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+</ng-template>

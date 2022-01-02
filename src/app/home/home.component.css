@@ -1,0 +1,48 @@
+#top-airing,
+#top-tv,
+#top-upcoming {
+  margin-bottom: 50px;
+  overflow-x: scroll;
+  display: flex;
+  overflow-y: auto;
+  width: 100%;
+}
+
+#top-airing h1 {
+  margin-top: 80px;
+}
+
+h1 {
+  margin-top: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+mat-card {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: auto 15px 2px 15px;
+  cursor: pointer;
+  transition: transform 1s;
+}
+
+mat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+mat-card-content p {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+
+  #top-airing::-webkit-scrollbar,
+  #top-tv::-webkit-scrollbar,
+  #top-upcoming::-webkit-scrollbar {
+    display: none;
+  }
+}
